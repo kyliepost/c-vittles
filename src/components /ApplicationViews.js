@@ -1,11 +1,12 @@
-import React from 'react' 
-import {ApplicationViews} from "./ApplicationVeiws.js" 
-import { NavBar } from "./nav/NavBar.js " 
+import React from "react";
+import { Route } from "react-router-dom"; 
 
-export const Vittles = () => { 
-    return ( <> 
-    <NavBar />
-    <ApplicationViews/> 
-    </>  
-    ) 
+export const ApplicationViews = () => {
+    return (
+    <>
+
+
+    </>
+
+    )
 }
