@@ -5,7 +5,6 @@ export const ApplicationViews = () => {
     return (
     <>
 
-
     </>
 
     )
