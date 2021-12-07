@@ -1,9 +1,9 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { ApplicationViews } from "./ApplicationViews"
-// import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
+import { NavBar } from "./navBar/navBar"
 
 export const Vittles = () => (
     <>
@@ -11,7 +11,7 @@ export const Vittles = () => (
             if (localStorage.getItem("v_token")) {
                 return <>
                     <Route>
-                        {/* <NavBar /> */}
+                        <NavBar />
                         <ApplicationViews />
                     </Route>
                 </>

@@ -1,38 +1,30 @@
 import React from "react"
 import { Link } from "react-router-dom"
-// import "./NavBar.css"
+import "./navBar.css"
 
-export const NavBar = () => {
-    const history = useHistory()
-    return (
+
+export const NavBar = (props) => {
+return (
+    <>
+        
         <ul className="navbar">
-            <li className="navbar__item">
-                Navigation link
+        <li className="navbar__item"> Vittles </li>
+        <li className="navbar__item">
+                <Link className="navbar__link" to="/">Home</Link>
             </li>
-            <li className="navbar__item">
-                Navigation link
+        <li className="navbar__item">
+                <Link className="navbar__link" to="#"
+                onClick={
+                    () => {
+                        localStorage.removeItem("v_token")
+                    }
+                }>
+                    Logout
+                </Link>
             </li>
-            <li className="navbar__item">
-                Navigation link
-            </li>
-            {
-                (localStorage.getItem("v_token") !== null) ?
-                    <li className="nav-item">
-                        <button className="nav-link fakeLink"
-                            onClick={() => {
-                                localStorage.removeItem("v_token")
-                                history.push({ pathname: "/" })
-                            }}
-                        >Logout</button>
-                    </li> :
-                    <>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/login">Login</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/register">Register</Link>
-                        </li>
-                    </>
-            }        </ul>
-    )
+            
+        </ul>
+    </>
+
+)
 }
