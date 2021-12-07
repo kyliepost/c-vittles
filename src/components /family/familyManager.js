@@ -28,7 +28,7 @@ export const createFamily = (family) => {
         .then(res => res.json())
 }
 
-export const updateFamily = (famiy, familyId) => {
+export const updateFamily = (family, familyId) => {
     return fetch(`http://localhost:8000/families/${familyId}`, {
         method: "PUT",
         headers: {
@@ -37,4 +37,14 @@ export const updateFamily = (famiy, familyId) => {
         },
         body: JSON.stringify(family)
     })
+}
+
+export const joinFamily = familyId => {
+    return fetch(`http://localhost:8000/families/${ familyId }/join`, {
+        method: "POST",
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("v_token")}`
+        }
+    })
+        .then(response => response.json())
 }
