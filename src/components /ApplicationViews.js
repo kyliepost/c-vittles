@@ -9,12 +9,9 @@ export const ApplicationViews = () => {
         <Route exact path="/">
                 <FamilyList />
         </Route>
-        {/* <Route exact path="/">
+        <Route exact path="/">
                 <FamilyForm />
-            </Route> */}
-        {/* <Route exact path="/:riverId(\d+)">
-        <RiverChat />
-        </Route> */}
+            </Route>
     </>
 
     )

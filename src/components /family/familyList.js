@@ -18,19 +18,12 @@ export const FamilyList = (props) => {
             {
                 families.map(family => {
                     return <section key={`family--${family.id}`} className="family">
-                        <Link className="family__name">{family.name}</Link>
+                        <Link className="family__name" to={`/${family.id}`}>{family.name}</Link>
                     </section>
                 })
             }
             </section>
-            <section className="CREATEFAMILY">
-            <h2>CREATE NEW FAMILY</h2>
-            <button className="btn btn-2 btn-sep icon-create"
-                onClick={() => {
-                    history.push({ pathname: "/" })
-                }}
-            >Create</button>
-            </section>
+
         </article>
     )
 }
