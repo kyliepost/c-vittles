@@ -55,7 +55,7 @@ export const FamilyForm = () => {
                     <button onClick={evt => {
                         evt.preventDefault()
                         createFamily(family)
-                        .then(() => history.push(`/${family.id}`))
+                        .then(() => history.push(`/`))
                     }}
                     className="formButtons" >
                         Create

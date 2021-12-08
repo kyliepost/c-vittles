@@ -39,12 +39,12 @@ export const updateFamily = (family, familyId) => {
     })
 }
 
-export const joinFamily = familyId => {
-    return fetch(`http://localhost:8000/families/${ familyId }/join`, {
-        method: "POST",
-        headers:{
-            "Authorization": `Token ${localStorage.getItem("v_token")}`
-        }
-    })
-        .then(response => response.json())
-}
+// export const joinFamily = familyId => {
+//     return fetch(`http://localhost:8000/families/${ familyId }/join`, {
+//         method: "POST",
+//         headers:{
+//             "Authorization": `Token ${localStorage.getItem("v_token")}`
+//         }
+//     })
+//         .then(response => response.json())
+// }
