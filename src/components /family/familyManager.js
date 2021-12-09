@@ -39,12 +39,23 @@ export const updateFamily = (family, familyId) => {
     })
 }
 
-// export const joinFamily = familyId => {
-//     return fetch(`http://localhost:8000/families/${ familyId }/join`, {
-//         method: "POST",
-//         headers:{
-//             "Authorization": `Token ${localStorage.getItem("v_token")}`
-//         }
-//     })
-//         .then(response => response.json())
-// }
+export const getFamilyBook = (familyBookId) => {
+    return fetch(`http://localhost:8000/familyBook/${familyBookId}`, {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("v_token")}`
+        }
+    })
+        .then(res => res.json())
+}
+
+export const deleteFamily = (familyId) => {
+    return fetch(`http://localhost:8000/families/${familyId}`,
+            {   
+                method: "DELETE",
+                headers: {
+                    "Authorization": `Token ${localStorage.getItem("v_token")}`,
+                    "Content-Type": "application/json"
+                }
+            }
+        )
+}

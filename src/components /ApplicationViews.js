@@ -17,7 +17,7 @@ export const ApplicationViews = () => {
             <FamilyPage />
         </Route>
         <Route exact path="/:familyId(\d+)/recipes">
-            <FamilyPage />
+
         </Route>
     </>
 

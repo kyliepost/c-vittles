@@ -17,19 +17,13 @@ export const FamilyPage = () => {
         <>
             <article>
                 <section className="familyInfo">
-                    <div>{family.name}</div>
-                    <p>{family.bio}</p>
+                    <h2>{family.name}</h2>
+                    <h4>{family.bio}</h4>
                 </section>
 
                 <section className="familyBook">
                     <div>Recipes</div>
-                    <button onClick={evt => {
-                        evt.preventDefault()
-                        .then(() => history.push(`/${family.id}/recipes`))
-                    }}
-                    className="formButtons" >
-                        Click To View
-                    </button>
+                    <button className="btn-family" onClick={() => history.push(`/${familyId}/recipes`)}>Click To View</button>
                 </section>
             </article>
         </>
