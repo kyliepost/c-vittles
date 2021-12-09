@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 import { FamilyForm } from "./family/familyForm";
 import { FamilyList } from "./family/familyList";
 import { FamilyPage } from "./family/familyPage";
+import { RecipeForm } from "./recipes/recipeForm";
+import { RecipeList } from "./recipes/recipeList";
 
 export const ApplicationViews = () => {
     return (
@@ -17,7 +19,8 @@ export const ApplicationViews = () => {
             <FamilyPage />
         </Route>
         <Route exact path="/:familyId(\d+)/recipes">
-
+            <RecipeList />
+            <RecipeForm />
         </Route>
     </>
 
