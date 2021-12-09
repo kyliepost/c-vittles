@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
-import { createFamily, getFamilies } from "./familyManager"
+import { createFamily } from "./familyManager"
 
 
 export const FamilyForm = () => {
@@ -55,7 +55,7 @@ export const FamilyForm = () => {
                     <button onClick={evt => {
                         evt.preventDefault()
                         createFamily(family)
-                        .then(() => history.push(`/`))
+                        .then((response) => history.push(`/${response.id}`))
                     }}
                     className="formButtons" >
                         Create
