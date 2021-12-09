@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 import { createRecipe } from "./recipeManager"
 
 
@@ -7,6 +7,7 @@ import { createRecipe } from "./recipeManager"
 export const RecipeForm = () => {
 
     const history = useHistory()
+    const {familyId} = useParams()
     const [recipe, setRecipe] = useState({
         name: "",
         bio: ""
@@ -57,7 +58,18 @@ export const RecipeForm = () => {
                         name="description"
                         type="text"
                         className="form-control"
-                        placeholder="recipe text"
+                        placeholder="description text"
+                        onChange={handleControlledInputChange}
+                    />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="inputBio"> Tags: </label>
+                    <input
+                        required autoFocus
+                        name="tags"
+                        type="text"
+                        className="form-control"
+                        placeholder="tag text"
                         onChange={handleControlledInputChange}
                     />
                 </fieldset>
@@ -67,7 +79,7 @@ export const RecipeForm = () => {
                     <button onClick={evt => {
                         evt.preventDefault()
                         createRecipe(recipe)
-                        .then(() => history.push(`/recipes`))
+                        .then(() => history.push(`/${familyId}/recipes`))
                     }}
                     className="formButtons" >
                         Create Recipe

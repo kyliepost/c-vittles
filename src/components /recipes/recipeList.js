@@ -6,7 +6,6 @@ import { getRecipe } from "./recipeManager"
 export const RecipeList = () => {
     const [family, setBook] = useState([])
     const {familyId} = useParams()
-    const history = useHistory()
 
     useEffect(() => {
         getFamilyBook(familyId).then(data => setBook(data))
