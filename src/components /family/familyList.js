@@ -14,17 +14,14 @@ export const FamilyList = (props) => {
 
     return (
         <article className="families">
-            <section className="JOINFAMILY">
-            <h2>JOIN FAMILY</h2>
+            <section className="VIEWFAMILY">
+            <h2>VIEW FAMILY</h2>
             {
                 families.map(family => {
                     return <section key={`family--${family.id}`} className="family">
                         <Link className="family__name" to={`/${family.id}`}>{family.name}</Link>
-                        { (family.user.id === userId)
-                        ?
                         <button onClick={() => deleteFamily(family.id)}> Delete </button>
-                        : null
-                        }
+
                     </section>
                 })
             }

@@ -62,17 +62,14 @@ export const RecipeForm = () => {
                         onChange={handleControlledInputChange}
                     />
                 </fieldset>
-                <fieldset>
-                    <label htmlFor="inputBio"> Tags: </label>
-                    <input
-                        required autoFocus
-                        name="tags"
-                        type="text"
-                        className="form-control"
-                        placeholder="tag text"
-                        onChange={handleControlledInputChange}
-                    />
-                </fieldset>
+                <select name="langOpt[]" multiple id="langOpt">
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
 
 
 
