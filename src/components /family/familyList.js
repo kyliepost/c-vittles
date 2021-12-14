@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react"
 import { Link, useHistory, useParams } from 'react-router-dom'
-import { getFamilies, deleteFamily } from "./familyManager.js"
+import { getFamilies, deleteFamily, getCurrentUser } from "./familyManager.js"
 import "./familyList.css"
 
-export const FamilyList = (props) => {
+export const FamilyList = () => {
     const history = useHistory()
     const [families, setFamilies] = useState([])
-    const {userId} = useParams()
+    const [currentUser, setCurrentUser] = useState()
+
 
     useEffect(() => {
         getFamilies().then(data => setFamilies(data))
+        getCurrentUser().then(data => setCurrentUser(data))
     }, [])
+
 
     return (
         <article className="families">
@@ -20,8 +23,12 @@ export const FamilyList = (props) => {
                 families.map(family => {
                     return <section key={`family--${family.id}`} className="family">
                         <Link className="family__name" to={`/${family.id}`}>{family.name}</Link>
-                        <button onClick={() => deleteFamily(family.id)}> Delete </button>
 
+                        { family.user == currentUser?.id
+                        ?
+                        <button onClick={() => deleteFamily(family.id)}> Delete </button>
+                        : null
+                    }
                     </section>
                 })
             }

@@ -59,3 +59,12 @@ export const deleteFamily = (familyId) => {
             }
         )
 }
+
+export const getCurrentUser = () => {
+    return fetch(`http://localhost:8000/families/getCurrentUser`, {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("v_token")}`
+        }
+    })
+        .then(res => res.json())
+}

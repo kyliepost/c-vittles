@@ -48,3 +48,13 @@ export const getRecipeTags = () => {
     })
         .then(response => response.json())
 }
+
+export const getTags = () => {
+    return fetch("http://localhost:8000/tags", {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("v_token")}`
+        }
+    })
+        .then(response => response.json())
+}
+
