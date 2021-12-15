@@ -12,7 +12,8 @@ export const RecipeForm = () => {
         name: "",
         ingredients: "",
         description: "",
-        tags: 0
+        tags: 0,
+        family: familyId
     })
     const [tags, setTag] = useState([])
     const [checkedState, setCheckedState] = React.useState(
