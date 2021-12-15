@@ -49,7 +49,7 @@ export const RecipeForm = () => {
         return (
             <>
                 <section className="CREATERECIPE">
-                    <h2>CREATE NEW RECIPE</h2>
+                    <h3>CREATE NEW RECIPE</h3>
 
 
                     <form>
