@@ -34,11 +34,10 @@ export const RecipeList = () => {
                                 <p>{family.recipe.ingredients}</p>
                                 <p>{family.recipe.description}</p>
                                 <p>{family.recipe.tags}</p>
-
                                 <button onClick={() => history.push(`/recipes/${family.recipe.id}/edit`)}>Edit</button>
-
-
+    
                                 <button onClick={() => deleteRecipe(family.recipe?.id)}> Delete </button>
+
 
                             </div>
                         </section>
@@ -51,7 +50,4 @@ export const RecipeList = () => {
         </article>
     )
 }
-// { family.recipe?.user == currentUser?.id
-//     ?
-// : null
-// }
+

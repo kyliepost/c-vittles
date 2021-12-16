@@ -154,7 +154,9 @@ export const RecipeForm = () => {
                         
                             createRecipe(newRecipe)
                                 .then(() => history.push(`/${familyId}/recipes`))
-                                
+                                .then(() => {
+                                    window.location.reload(false);
+                                })
                                 // evt.preventDefault()
                                 // constructNewRecipe()
                             }

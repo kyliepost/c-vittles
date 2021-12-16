@@ -38,6 +38,9 @@ export const deleteRecipe = (recipeId) => {
                 }
             }
         )
+        .then(() => {
+            window.location.reload(false);
+        })
 }
 export const updateRecipe = (recipe, recipeId) => {
     return fetch(`http://localhost:8000/recipes/${recipeId}`, {
