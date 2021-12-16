@@ -24,7 +24,7 @@ export const FamilyList = () => {
                     return <section key={`family--${family.id}`} className="family">
                         <Link className="family__name" to={`/${family.id}`}>{family.name}</Link>
 
-                        { family.user == currentUser?.id
+                        { family.user.id == currentUser?.id
                         ?
                         <button onClick={() => deleteFamily(family.id)}> Delete </button>
                         : null

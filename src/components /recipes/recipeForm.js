@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
-import { createRecipe, getTags } from "./recipeManager"
+import { createRecipe, getRecipe, getTags, updateRecipe } from "./recipeManager"
 
 
 
 export const RecipeForm = () => {
-    
     const history = useHistory()
     const { familyId } = useParams()
+    const { recipeId } = useParams()
     const [recipe, setRecipe] = useState({
         name: "",
         ingredients: "",
@@ -16,9 +16,11 @@ export const RecipeForm = () => {
         family: familyId
     })
     const [tags, setTag] = useState([])
+    const [family, setState] = useState([])
     const [checkedState, setCheckedState] = React.useState(
         new Array(tags.length).fill(false)
     );
+    const editMode = recipeId ? true : false
 
     useEffect(() => {
         getTags().then(data => setTag(data))
@@ -46,11 +48,40 @@ export const RecipeForm = () => {
         setCheckedState(copyOfCheckedState);
     }
 
+    useEffect(() => {
+        if (recipeId) {
+            getRecipe(recipeId).then((singleRecipeData) => {
+                setRecipe(singleRecipeData)
+                const tags = singleRecipeData.tags.map(tag => tag.id)
+                setCheckedState(tags)
+            })
+        }   
+    },
+        [recipeId])
+
+
+    const changeRecipeState = (event) => {
+
+        const newRecipe = Object.assign({}, recipe)
+        newRecipe[event.target.name] = event.target.value   
+        setRecipe(newRecipe)  
+    }
+
+    // const constructNewRecipe = () => {
+    //     if (editMode) {
+    //         updateRecipe(recipe)
+    //             .then(() => history.push(`/${family.id}/recipes`))
+    //     } else {
+    //         createRecipe(recipe)
+    //             .then(() => history.push(`/${family.id}/recipes`))
+    //     }
+
+    // }
+
         return (
             <>
                 <section className="CREATERECIPE">
-                    <h3>CREATE NEW RECIPE</h3>
-
+                <h2 className="gameForm__title">{editMode ? "Update Recipe" : "Create New Recipe"}</h2>
 
                     <form>
                         <fieldset>
@@ -61,7 +92,8 @@ export const RecipeForm = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="name text"
-                                onChange={handleControlledInputChange}
+                                value={recipe.name}
+                                onChange={changeRecipeState}
                             />
                         </fieldset>
                         <fieldset>
@@ -72,7 +104,8 @@ export const RecipeForm = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="ingredients text"
-                                onChange={handleControlledInputChange}
+                                value={recipe.ingredients}
+                                onChange={changeRecipeState}
                             />
                         </fieldset>
                         <fieldset>
@@ -83,7 +116,8 @@ export const RecipeForm = () => {
                                 type="text"
                                 className="form-control"
                                 placeholder="description text"
-                                onChange={handleControlledInputChange}
+                                value={recipe.description}
+                                onChange={changeRecipeState}
                             />
                         </fieldset>
                         <h3>Choose your tags:</h3>
@@ -94,6 +128,7 @@ export const RecipeForm = () => {
                                         <div className="tags-list-item">
                                             <div className="left-section">
                                                 <input
+                                                    checked={checkedState.includes(id)}
                                                     type="checkbox"
                                                     id={`custom-checkbox-${index}`}
                                                     name={description}
@@ -109,14 +144,23 @@ export const RecipeForm = () => {
                         </ul>
                         <button onClick={evt => {
                             evt.preventDefault()
-                        const newRecipe = {
+                            const newRecipe = {
                                 ...recipe, tags: checkedState
                             }
+                            if (recipeId) {
+                                updateRecipe(newRecipe, recipeId)
+                                    .then(() => history.goBack())
+                            } else {
+                        
                             createRecipe(newRecipe)
                                 .then(() => history.push(`/${familyId}/recipes`))
+                                
+                                // evt.preventDefault()
+                                // constructNewRecipe()
+                            }
                         }}
                             className="formButtons" >
-                            Create Recipe
+                            Save Recipe
                         </button>
 
                     </form>

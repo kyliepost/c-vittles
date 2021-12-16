@@ -39,6 +39,16 @@ export const deleteRecipe = (recipeId) => {
             }
         )
 }
+export const updateRecipe = (recipe, recipeId) => {
+    return fetch(`http://localhost:8000/recipes/${recipeId}`, {
+        method: "PUT",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("v_token")}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(recipe)
+    })
+}
 
 export const getRecipeTags = () => {
     return fetch("http://localhost:8000/recipeTags", {

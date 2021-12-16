@@ -22,6 +22,9 @@ export const ApplicationViews = () => {
             <RecipeList />
             <RecipeForm />
         </Route>
+        <Route exact path="/recipes/:recipeId/edit">
+            <RecipeForm/>
+        </Route>
     </>
 
     )
