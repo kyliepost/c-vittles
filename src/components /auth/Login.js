@@ -11,7 +11,7 @@ export const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault()
 
-        return fetch("https://vittles-c.herokuapp.com/login", {
+        return fetch("https://vittles.herokuapp.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

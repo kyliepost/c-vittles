@@ -1,5 +1,5 @@
 export const getFamilies = () => {
-    return fetch("https://vittles-s.herokuapp.com/families", {
+    return fetch("https://vittles.herokuapp.com/families", {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
@@ -8,7 +8,7 @@ export const getFamilies = () => {
 }
 
 export const getFamily = (familyId) => {
-    return fetch(`https://vittles-s.herokuapp.com/families/${familyId}`, {
+    return fetch(`https://vittles.herokuapp.com/families/${familyId}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
@@ -17,7 +17,7 @@ export const getFamily = (familyId) => {
 }
 
 export const createFamily = (family) => {
-    return fetch("https://vittles-s.herokuapp.com/families", {
+    return fetch("https://vittles.herokuapp.com/families", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const createFamily = (family) => {
 }
 
 export const updateFamily = (family, familyId) => {
-    return fetch(`https://vittles-s.herokuapp.com/families/${familyId}`, {
+    return fetch(`https://vittles.herokuapp.com/families/${familyId}`, {
         method: "PUT",
         headers: {
             "Authorization": `Token ${localStorage.getItem("v_token")}`,
@@ -40,7 +40,7 @@ export const updateFamily = (family, familyId) => {
 }
 
 export const getFamilyBook = (familyBookId) => {
-    return fetch(`https://vittles-s.herokuapp.com/familyBook/${familyBookId}`, {
+    return fetch(`https://vittles.herokuapp.com/familyBook/${familyBookId}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
@@ -49,7 +49,7 @@ export const getFamilyBook = (familyBookId) => {
 }
 
 export const deleteFamily = (familyId) => {
-    return fetch(`https://vittles-s.herokuapp.com/families/${familyId}`,
+    return fetch(`https://vittles.herokuapp.com/families/${familyId}`,
             {   
                 method: "DELETE",
                 headers: {
@@ -61,7 +61,7 @@ export const deleteFamily = (familyId) => {
 }
 
 export const getCurrentUser = () => {
-    return fetch(`https://vittles-s.herokuapp.com/families/getCurrentUser`, {
+    return fetch(`https://vittles.herokuapp.com/families/getCurrentUser`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
