@@ -1,5 +1,5 @@
 export const getRecipes = (familyId) => {
-    return fetch(`http://localhost:8000/recipes/${familyId}`, {
+    return fetch(`https://vittles-s.herokuapp.com/recipes/${familyId}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
@@ -8,7 +8,7 @@ export const getRecipes = (familyId) => {
 }
 
 export const getRecipe = (recipeId) => {
-    return fetch(`http://localhost:8000/recipes/${recipeId}`, {
+    return fetch(`https://vittles-s.herokuapp.com/recipes/${recipeId}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
@@ -17,7 +17,7 @@ export const getRecipe = (recipeId) => {
 }
 
 export const createRecipe = (recipe) => {
-    return fetch("http://localhost:8000/recipes", {
+    return fetch("https://vittles-s.herokuapp.com/recipes", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const createRecipe = (recipe) => {
 }
 
 export const deleteRecipe = (recipeId) => {
-    return fetch(`http://localhost:8000/recipes/${recipeId}`,
+    return fetch(`https://vittles-s.herokuapp.com/recipes/${recipeId}`,
             {   
                 method: "DELETE",
                 headers: {
@@ -43,7 +43,7 @@ export const deleteRecipe = (recipeId) => {
         })
 }
 export const updateRecipe = (recipe, recipeId) => {
-    return fetch(`http://localhost:8000/recipes/${recipeId}`, {
+    return fetch(`https://vittles-s.herokuapp.com/recipes/${recipeId}`, {
         method: "PUT",
         headers: {
             "Authorization": `Token ${localStorage.getItem("v_token")}`,
@@ -54,7 +54,7 @@ export const updateRecipe = (recipe, recipeId) => {
 }
 
 export const getRecipeTags = () => {
-    return fetch("http://localhost:8000/recipeTags", {
+    return fetch("https://vittles-s.herokuapp.com/recipeTags", {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
@@ -63,7 +63,7 @@ export const getRecipeTags = () => {
 }
 
 export const getTags = () => {
-    return fetch("http://localhost:8000/tags", {
+    return fetch("https://vittles-s.herokuapp.com/tags", {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
