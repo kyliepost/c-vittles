@@ -1,5 +1,5 @@
 export const getRecipes = (familyId) => {
-    return fetch(`https://vittles.herokuapp.com/recipes/${familyId}`, {
+    return fetch(`https://vittles-c.herokuapp.com/recipes/${familyId}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
@@ -8,7 +8,7 @@ export const getRecipes = (familyId) => {
 }
 
 export const getRecipe = (recipeId) => {
-    return fetch(`https://vittles.herokuapp.com/recipes/${recipeId}`, {
+    return fetch(`https://vittles-c.herokuapp.com/recipes/${recipeId}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
@@ -17,7 +17,7 @@ export const getRecipe = (recipeId) => {
 }
 
 export const createRecipe = (recipe) => {
-    return fetch("https://vittles.herokuapp.com/recipes", {
+    return fetch("https://vittles-c.herokuapp.com/recipes", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const createRecipe = (recipe) => {
 }
 
 export const deleteRecipe = (recipeId) => {
-    return fetch(`https://vittles.herokuapp.com/recipes/${recipeId}`,
+    return fetch(`https://vittles-c.herokuapp.com/recipes/${recipeId}`,
             {   
                 method: "DELETE",
                 headers: {
@@ -43,7 +43,7 @@ export const deleteRecipe = (recipeId) => {
         })
 }
 export const updateRecipe = (recipe, recipeId) => {
-    return fetch(`https://vittles.herokuapp.com/recipes/${recipeId}`, {
+    return fetch(`https://vittles-c.herokuapp.com/recipes/${recipeId}`, {
         method: "PUT",
         headers: {
             "Authorization": `Token ${localStorage.getItem("v_token")}`,
@@ -54,7 +54,7 @@ export const updateRecipe = (recipe, recipeId) => {
 }
 
 export const getRecipeTags = () => {
-    return fetch("https://vittles.herokuapp.com/recipeTags", {
+    return fetch("https://vittles-c.herokuapp.com/recipeTags", {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
