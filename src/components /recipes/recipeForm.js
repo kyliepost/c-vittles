@@ -13,14 +13,17 @@ export const RecipeForm = () => {
         ingredients: "",
         description: "",
         tags: 0,
-        family: familyId
+        family: familyId,
+        user: 0
     })
     const [tags, setTag] = useState([])
-    const [family, setState] = useState([])
+    const [family, setFamily] = useState([])
     const [checkedState, setCheckedState] = React.useState(
         new Array(tags.length).fill(false)
     );
     const editMode = recipeId ? true : false
+
+    const currentUser = parseInt(localStorage.getItem("v_token"))
 
     useEffect(() => {
         getTags().then(data => setTag(data))
@@ -145,7 +148,9 @@ export const RecipeForm = () => {
                         <button onClick={evt => {
                             evt.preventDefault()
                             const newRecipe = {
-                                ...recipe, tags: checkedState
+                                ...recipe, 
+                                tags: checkedState,
+                                user: currentUser
                             }
                             if (recipeId) {
                                 updateRecipe(newRecipe, recipeId)
