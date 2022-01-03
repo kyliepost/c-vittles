@@ -21,7 +21,7 @@ export const Register = () => {
                 "password": password.current.value
             }
 
-            return fetch("https://vittles-c.herokuapp.com/register", {
+            return fetch("https://vittles-s.herokuapp.com/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

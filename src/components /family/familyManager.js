@@ -40,7 +40,7 @@ export const updateFamily = (family, familyId) => {
 }
 
 export const getFamilyBook = (familyBookId) => {
-    return fetch(`https://vittles-s.herokuapp.com/familyBook/${familyBookId}`, {
+    return fetch(`https://vittles.herokuapp.com/familyBook/${familyBookId}`, {
         headers:{
             "Authorization": `Token ${localStorage.getItem("v_token")}`
         }
