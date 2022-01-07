@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { createFamily } from "./familyManager"
+import "./familyList.css"
 
 
 export const FamilyForm = () => {
