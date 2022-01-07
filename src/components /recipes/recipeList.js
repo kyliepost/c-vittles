@@ -24,7 +24,7 @@ export const RecipeList = () => {
             <section className="VIEWRECIPES">
                 <h2>{family.name}</h2>
                 <h3>Recipes</h3>
-
+                <div className="recipes">
 
                 {
                     family.recipes?.map(family => {
@@ -54,6 +54,7 @@ export const RecipeList = () => {
                         </section>
                     })
                 }
+                </div>
             </section>
 
 

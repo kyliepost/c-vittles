@@ -53,3 +53,8 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.recipes {
+  display:flex;
+  flex-wrap: wrap;
+}

@@ -24,7 +24,7 @@ export const FamilyForm = () => {
     return (
         <>
             <section className="CREATEFAMILY">
-                <h2>CREATE NEW FAMILY</h2>
+                <h2>Create New Family</h2>
 
             
             <form>

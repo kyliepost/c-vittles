@@ -18,7 +18,7 @@ export const FamilyList = () => {
     return (
         <article className="families">
             <section className="VIEWFAMILY">
-            <h2>VIEW FAMILY</h2>
+            <h2>View Family</h2>
             {
                 families.map(family => {
                     return <section key={`family--${family.id}`} className="family">
