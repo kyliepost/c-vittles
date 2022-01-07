@@ -89,37 +89,37 @@ export const RecipeForm = () => {
 
                     <form>
                         <fieldset>
-                            <label htmlFor="inputName"> Name: </label>
+                            <label htmlFor="inputName">  </label>
                             <input
                                 required autoFocus
                                 name="name"
                                 type="text"
                                 className="form-control"
-                                placeholder="name text"
+                                placeholder="Name"
                                 value={recipe.name}
                                 onChange={changeRecipeState}
                             />
                         </fieldset>
                         <fieldset>
-                            <label htmlFor="inputBio"> Ingredients: </label>
+                            <label htmlFor="inputBio">  </label>
                             <input
                                 required autoFocus
                                 name="ingredients"
                                 type="text"
                                 className="form-control"
-                                placeholder="ingredients text"
+                                placeholder="Ingredients"
                                 value={recipe.ingredients}
                                 onChange={changeRecipeState}
                             />
                         </fieldset>
                         <fieldset>
-                            <label htmlFor="inputBio"> Description: </label>
+                            <label htmlFor="inputBio">  </label>
                             <input
                                 required autoFocus
                                 name="description"
                                 type="text"
                                 className="form-control"
-                                placeholder="description text"
+                                placeholder="Description"
                                 value={recipe.description}
                                 onChange={changeRecipeState}
                             />

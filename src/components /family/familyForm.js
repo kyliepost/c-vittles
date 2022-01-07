@@ -29,24 +29,24 @@ export const FamilyForm = () => {
             
             <form>
                 <fieldset>
-                    <label htmlFor="inputName"> Name: </label>
+                    <label htmlFor="inputName"> </label>
                     <input
                         required autoFocus
                         name="name"
                         type="text"
                         className="form-control"
-                        placeholder="name text"
+                        placeholder="Name"
                         onChange={handleControlledInputChange}
                     />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="inputBio"> Bio: </label>
+                    <label htmlFor="inputBio"> </label>
                     <input
                         required autoFocus
                         name="bio"
                         type="text"
                         className="form-control"
-                        placeholder="bio text"
+                        placeholder="Bio"
                         onChange={handleControlledInputChange}
                     />
                 </fieldset>

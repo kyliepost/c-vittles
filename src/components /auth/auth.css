@@ -56,6 +56,7 @@ fieldset {
     background-color: hsla(0,0%,100%,0.75);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    margin-top: 140px;
 }
 
 .button--close {
