@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useHistory, useParams } from "react-router-dom"
 import { createRecipe, getRecipe, getTags, updateRecipe } from "./recipeManager"
+import "./recipeList.css"
 
 
 

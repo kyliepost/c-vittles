@@ -43,3 +43,13 @@
     transform: rotateY(180deg);
     overflow: auto;
 }
+
+.VIEWRECIPES {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.CREATERECIPE {
+  margin-left: 10px;
+  margin-right: 10px;
+}
