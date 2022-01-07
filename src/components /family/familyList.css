@@ -1,7 +1,10 @@
-.JOINFAMILY {
-    border: dashed;
+.VIEWFAMILY {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .CREATEFAMILY {
-    border: dashed;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* width: 350px; */
 }

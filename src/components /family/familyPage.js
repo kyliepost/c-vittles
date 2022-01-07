@@ -21,9 +21,9 @@ export const FamilyPage = () => {
                     <h4>{family.bio}</h4>
                 </section>
 
-                <section className="familyBook">
-                    <div>Recipes</div>
-                    <button className="btn-family" onClick={() => history.push(`/${familyId}/recipes`)}>Click To View</button>
+                <section className="familyBook"> 
+                <h3>Family Book</h3>
+                    <button className="btn-family" onClick={() => history.push(`/${familyId}/recipes`)}>Click To View Your Recipes</button>
                 </section>
             </article>
         </>

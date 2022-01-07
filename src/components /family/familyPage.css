@@ -1,7 +1,12 @@
 .familyInfo {
-    border: dashed;
+    text-align: left;
+    margin-left: 10px;
+}
+h4 {
+    margin-left: 40px;
 }
 
 .familyBook {
-    border: dashed;
+    text-align: center;
+    border: solid;
 }
